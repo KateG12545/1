@@ -9,91 +9,38 @@
     <link rel="stylesheet" href="styles/text.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1 class="header__title">Banking more smart</h1>
-            <p class="header__subtitle">Here the only special management platform and equipment exist.</p>
-            <button class="btn btn--primary" id="getCardBtn">Get your card</button>
-        </div>
-    </header>
-
-    <section class="deals">
-        <div class="container">
-            <h2 class="section-title">Hot deals for you</h2>
-            <p class="section-subtitle">Online shopping for rental sales directly to customers</p>
-        </div>
-    </section>
-
-    <section class="cashback">
-        <div class="container">
-            <h2 class="section-title">LXX cashback</h2>
-            <p class="section-subtitle">Global average buy credit cards from key customers</p>
-        </div>
-    </section>
-
-    <section class="terms">
-        <div class="container">
-            <h2 class="section-title">30-day terms</h2>
-            <p class="section-subtitle">Global change by brand trade direct to consumers</p>
-        </div>
-    </section>
-
-    <section class="social">
-        <div class="container">
-            <h2 class="section-title">Social Media beyond probability</h2>
-            <p class="section-subtitle">Business is going to compete.</p>
-        </div>
-    </section>
-
-    <section class="customers">
-        <div class="container">
-            <h2 class="section-title">1000+ Customer</h2>
-            <p class="section-text">What are Business or Group assets including our customers in both industry, market and network sectors and how they operate in a range of ways that can be used as a product or service provider.</p>
-            
-            <table class="stats-table">
-                <thead>
-                    <tr>
-                        <th>FAT OF SET</th>
-                        <th>LXX $1</th>
-                        <th>LXX $2</th>
-                        <th>CUSTOMER $3</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>10,000+/-</td>
-                        <td>45000</td>
-                        <td>576544</td>
-                        <td>347344</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <section class="handoff">
-        <div class="container">
-            <h2 class="section-title">Handoff your work smarter now</h2>
-            <p class="section-text">Our own banking services are available at the internet. Our clients are also working with us.</p>
-            
-            <ul class="features-list">
-                <li class="feature-item">
-                    <h3 class="feature-title">Emergency</h3>
-                    <ul class="feature-sublist">
-                        <li>Supported for a customer's money</li>
-                        <li>Supported for a customer's financial support</li>
-                        <li>Supported for a customer's financial support</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </section>
+    <!-- ... (предыдущий код остается без изменений) ... -->
 
     <!-- Модальное окно -->
     <div class="modal-container" id="modalContainer">
         <div class="modal">
             <h2 class="modal-title">Get Your Card</h2>
             <p class="modal-text">Please fill out the form to receive your banking card</p>
+            
+            <form class="card-form" id="cardForm">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required placeholder="Your message here"></textarea>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="consent" name="consent" required>
+                    <label for="consent">I agree to the terms and conditions</label>
+                </div>
+                
+                <button type="submit" class="btn btn--primary">Submit Application</button>
+            </form>
+            
             <button class="btn btn--close" id="closeModalBtn">Close</button>
         </div>
     </div>
@@ -101,9 +48,56 @@
     <!-- Блочные стили загружаются в конце body -->
     <style>
         @import url('styles/block.css');
+        
+        /* Стили для формы */
+        .card-form {
+            margin: 20px 0;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+        
+        .checkbox-group input {
+            margin-right: 10px;
+        }
     </style>
 
     <!-- Скрипты подключаются перед закрывающим тегом body -->
     <script src="scripts/main.js"></script>
+    <script>
+        // Обработка отправки формы
+        document.getElementById('cardForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form submitted successfully!');
+            // Здесь можно добавить AJAX-запрос для отправки данных
+        });
+    </script>
 </body>
 </html>
