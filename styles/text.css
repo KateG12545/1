@@ -1,26 +1,59 @@
-/* Текстовые стили */
+/* Подключение шрифтов из Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap');
+
+/* Базовые текстовые стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Заголовки */
 .header__title {
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
     color: #2c3e50;
-}
-
-.header__subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: #7f8c8d;
+    letter-spacing: -0.5px;
 }
 
 .section-title {
+    font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: #2c3e50;
 }
 
+.modal-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.feature-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+/* Подзаголовки и основной текст */
+.header__subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    color: #7f8c8d;
+}
+
 .section-subtitle {
     font-size: 1.1rem;
+    font-weight: 400;
     color: #7f8c8d;
     margin-bottom: 2rem;
 }
@@ -31,19 +64,13 @@
     margin-bottom: 1.5rem;
 }
 
-.feature-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #2c3e50;
-}
-
-.modal-title {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
 .modal-text {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
+    color: #555;
+}
+
+/* Элементы форм */
+input, textarea, button {
+    font-family: 'Roboto', sans-serif;
 }
